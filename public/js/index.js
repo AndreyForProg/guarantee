@@ -4,6 +4,7 @@ const btnEnter = document.querySelector('#btnEnter')
 const enterAndmin = document.querySelector('.enter_Andmin')
 const content_Admin = document.querySelector('.content_Admin')
 const exit = document.querySelector('#exit')
+const errorMessage = document.querySelector('.errorMessage')
 
 if (!!localStorage.getItem('isLogged')) {
   enterAndmin.style.display = 'none'
@@ -15,13 +16,15 @@ if (!localStorage.getItem('isLogged')) {
   content_Admin.style.display = 'none'
 }
 
-//войти в админ понель
+//войти в админ панель
 btnEnter.addEventListener('click', () => {
   if( adminPas.value === '123' ) {
     localStorage.setItem('isLogged', '1')
     enterAndmin.style.display = 'none'
     content_Admin.style.display = 'flex'
     adminPas.value = ''
+  } else {
+    errorMessage.textContent = 'не правильный пароль'
   }
 })
 
@@ -30,7 +33,33 @@ exit.addEventListener('click', () => {
     localStorage.removeItem('isLogged', '1')
     enterAndmin.style.display = 'flex'
     content_Admin.style.display = 'none'
+    errorMessage.textContent = ''
 })
+
+// переключения между списком данных
+const title = document.querySelectorAll('.title')
+const contacts = document.querySelector('.content_contacts')
+const portfolio = document.querySelector('.portfolio')
+const clients = document.querySelector('.clients')
+
+
+for (let i = 0; i < title.length; i++) {
+  title[i].addEventListener('click', (e) => {
+    if (e.target.textContent === 'контактные данные') {
+      contacts.style.display = 'flex'
+      portfolio.style.display = 'none'
+      clients.style.display = 'none'
+    } else if (e.target.textContent === 'портофолио') {
+      contacts.style.display = 'none'
+      portfolio.style.display = 'block'
+      clients.style.display = 'none'
+    } else if (e.target.textContent === 'список клиентов') {
+      contacts.style.display = 'none'
+      portfolio.style.display = 'none'
+      clients.style.display = 'block'
+    }
+  })
+}
 
 //меняем контактные данные в админке
 const dataItem = document.querySelectorAll('.dataItem')
@@ -117,7 +146,6 @@ for (let i = 0; i < delPortfolioImg.length; i++) {
         data: valuePortImg[i].value,
       },
       success: function(data) {
-        dellPortStatus.textContent = data
         if (data === 'данные удалены') {
           document.getElementById(valuePortImg[i].value).remove();
         }
@@ -142,7 +170,6 @@ for (let i = 0; i < delClientImg.length; i++) {
         data: valueClientImg[i].value,
       },
       success: function(data) {
-        dellClientStatus.textContent = data
         if (data === 'данные удалены') {
           document.getElementById(valueClientImg[i].value).remove();
         }

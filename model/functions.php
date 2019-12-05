@@ -34,14 +34,14 @@ function addClientImg() {
 //выбрать всех картинки портфолио
 function getPortfolioImgs() {
   global $bd;
-  $sql = $bd->query("SELECT * FROM portfolio");
+  $sql = $bd->query("SELECT * FROM portfolio ORDER BY id DESC");
   return mysqli_fetch_all($sql, MYSQLI_ASSOC);
 }
 
 //выбрать всех картинки клиентов
 function getClientsImgs() {
   global $bd;
-  $sql = $bd->query("SELECT * FROM clients");
+  $sql = $bd->query("SELECT * FROM clients ORDER BY id DESC");
   return mysqli_fetch_all($sql, MYSQLI_ASSOC);
 }
 
