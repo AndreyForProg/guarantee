@@ -1,0 +1,147 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #F1F1F1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* header */
+header {
+  width: 100%;
+  height: 90vh;
+  background: url(../images/header.png) 100% 100% no-repeat; /* Добавляем фон */
+  background-size: contain;
+}
+section {
+  margin-top: 50px;
+}
+.nomber {
+  position: absolute;
+  top: 4%;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+.phone_nomber__large {
+  font-size: 50px;
+  font-weight: bold;
+}
+.nomber img {
+  width: 40px;
+}
+/* end header */
+
+/* список предложений */
+.navBar {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.navBar_item {
+  text-align: center;
+}
+
+/* о компании */
+.about_text {
+  font-size: 1.2rem;
+}
+
+/* портфолио */
+.portfolio_images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 60px;
+}
+.portfolio_image {
+  width: 100%;
+  height: 300px;
+  border: black 1px solid;
+}
+.whatch_more {
+  width: 200px;
+  margin: 0 auto;
+  padding: 15px 0;
+  cursor: pointer;
+  color: darkgray;
+}
+.whatch_more:hover {
+  color: dimgray;
+}
+
+/* кнопка */
+.btn {
+  width: 250px;
+  padding: 10px 20px;
+  text-align: center;
+  background: red;
+  color: white;
+  border-radius: 15px;
+  border: 0;
+  font-size: 17px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: rgb(228, 8, 8);
+}
+
+/* список клиентов */
+.clients_images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+}
+.client_image {
+  width: 100%;
+  height: 150px;
+  border: black 1px solid;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  background-image: url(../images/footer.png);
+  padding: 300px 0 20px 0;
+  position: absolute;
+  left: 0;
+}
+.center_footer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+.footer_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 25px;
+  color: white;
+}
+.footer_item a {
+  color: white;
+  text-decoration: none;
+}
+.footer_item a:hover {
+  color: beige;
+}
+.footer_item img {
+  margin-right: 10%;
+}

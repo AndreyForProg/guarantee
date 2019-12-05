@@ -1,0 +1,42 @@
+.wrapper {
+  width: 100%;
+  min-width: 1200px;
+}
+.content_Admin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#exit {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+}
+.title {
+  text-align: center;
+}
+.content_contacts {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  background: beige;
+}
+.data {
+  width: 50%;
+}
+.enter_Andmin {
+  width: 300px;
+  background: blanchedalmond;
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  text-align: center;
+}
+.label {
+  margin: 0 auto;
+}
+.images {
+  display: flex;
+  justify-content: space-evenly;
+  background: rgb(237, 232, 241);
+}
