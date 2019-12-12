@@ -90,53 +90,14 @@ for (let i = 0; i < updateBtn.length; i++) {
   })
 }
 
-//добавление картинок в портфолио
-const addPortInp = document.querySelector('.addPortInp') //инпут портфолио
-const addPortBtn = document.querySelector('.addPortBtn') //кнопка портфолио
-const addClientInp = document.querySelector('.addClientInp') //инпут клиент
-const addClientBtn = document.querySelector('.addClientBtn') //кнопка клиент
-const portStatus = document.querySelector('.portStatus') //статус добавления фото в портволио
-const clientStatus = document.querySelector('.clientStatus') //статус добавления клиента фото
+//добавление картинок
 const delPortfolioImg = document.querySelectorAll('.delPortfolioImg') //удаление картинки портфолио
 const valuePortImg = document.querySelectorAll('.valuePortImg') //значение картинки портфолио
 const dellPortStatus = document.querySelector('.dellPortStatus') //значение картинки портфолио
 
-let type = ''
-let imgWay = ''
-addPortBtn.addEventListener('click', (e) => {
-  if (e.target.className === 'addPortBtn') type = 'portfolio', imgWay = addPortInp.value
-  $.ajax({
-    method: 'POST',
-    url: 'http://guarantee.loc/index.php',
-    data: {
-        action: 'addPortfolioImg',
-        data: imgWay,
-      },
-      success: function(data) {
-          console.log(data)
-        }
-      })
-  portStatus.textContent = 'картинка добавлена'
-})
-
-addClientBtn.addEventListener('click', (e) => {
-  if (e.target.className === 'addClientBtn') type = 'portfolio', imgWay = addClientInp.value
-  $.ajax({
-    method: 'POST',
-    url: 'http://guarantee.loc/index.php',
-    data: {
-        action: 'addClientImg',
-        data: imgWay,
-      },
-    success: function(data) {
-        console.log(data)
-      }
-    })
-  clientStatus.textContent = 'картинка добавлена'
-})
-
 //удаление картинки портфолио
 for (let i = 0; i < delPortfolioImg.length; i++) {
+  console.log(delPortfolioImg[i])
   delPortfolioImg[i].addEventListener('click', (e) => {
     $.ajax({
       method: 'POST',

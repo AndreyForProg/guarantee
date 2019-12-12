@@ -61,14 +61,14 @@ section {
 /* портфолио */
 .portfolio_images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-template-rows: 1fr 1fr;
   grid-gap: 60px;
 }
-.portfolio_image {
+.portfolio_image img{
   width: 100%;
-  height: 300px;
-  border: black 1px solid;
+  max-width: 360px;
+  height: 320px;
 }
 .whatch_more {
   width: 200px;

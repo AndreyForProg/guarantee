@@ -62,20 +62,21 @@
     <div class="status"></div>
 
       <div class="portfolio">
-        <h3 class="portfolio_title">Портофолио</h3>
+        <h3 class="title">Портофолио</h3>
 
       <!-- добавляем картинку в портфолио -->
-        <div class="add">
-          <input type="button" class="addPortBtn" value="добавить картинку">
+        <form class="add" action="index.php?add" method="POST" enctype="multipart/form-data">
+          <input type="file" name="userfile[]" multiple="">
+          <input type="submit" name="portfolio" class="addPortBtn" value="добавить файл">
           <div class="portStatus"></div>
-        </div>
+        </form>
 
         <!-- выборка всех картиок -->
         <div class="allItems">
           <?php foreach ($getPortfolioImgs as $key => $value) { ?>
-              <div class="portfolio_item" id="<?php echo $getPortfolioImgs[$key]['img']; ?>">
-                <img     src   = "../public/<?php echo $getPortfolioImgs[$key]['img'];?>" alt = "">
-                <input type="hidden" value="<?php echo $getPortfolioImgs[$key]['img'];?>" class="valuePortImg">
+              <div class="portfolio_item" id="<?php echo $getPortfolioImgs[$key]['name']; ?>">
+                <img     src   = "../public/images/my<?php echo $getPortfolioImgs[$key]['name'];?>" alt = "">
+                <input type="hidden" value="<?php echo $getPortfolioImgs[$key]['name'];?>" class="valuePortImg">
                 <button class="delPortfolioImg">удалить</button>
               </div>
             <?php } ?>
@@ -84,19 +85,19 @@
 
       <!-- добавляем картинку клиента -->
       <div class="clients">
-        <h3 class="title">список клиентов</h3>
-        <div class="add">
-          <input type="text" class="addClientInp">
-          <input type="button" class="addClientBtn" value="добавить картинку">
-          <div class="clientStatus"></div>
-        </div>
+        <h3 class="title">Список клиентов</h3>
+        <form class="add" action="index.php?add" method="POST" enctype="multipart/form-data">
+          <input type="file" name="userfile[]" multiple="">
+          <input type="submit" name="clients" class="addClientBtn" value="добавить файл">
+          <div class="portStatus"></div>
+        </form>
 
         <!-- выборка всех картиок -->
         <div class="allItems">
           <?php foreach ($getClientsImgs as $key => $value) { ?>
-              <div class="client_item" id="<?php echo $getClientsImgs[$key]['img']; ?>">
-                <img     src   = "../public/<?php echo $getClientsImgs[$key]['img'];?>" alt = "">
-                <input type="hidden" value="<?php echo $getClientsImgs[$key]['img'];?>" class="valueClientImg">
+              <div class="client_item" id="<?php echo $getClientsImgs[$key]['name']; ?>">
+                <img     src   = "../public/images/my<?php echo $getClientsImgs[$key]['name'];?>" alt = "">
+                <input type="hidden" value="<?php echo $getClientsImgs[$key]['name'];?>" class="valueClientImg">
                 <button class="delClientImg">удалить</button>
               </div>
             <?php } ?>

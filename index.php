@@ -13,23 +13,23 @@ if (isset($_GET['admin'])) {
   adminIndex();
 }
 
+//редактируем контактные данные
 if (isset($_POST['action']) && ($_POST['action'] === 'updatePhone')) {
   update();
 }
 
-if (isset($_POST['action']) && ($_POST['action'] === 'addPortfolioImg')) {
-  addPortfolio();
-}
-
-if (isset($_POST['action']) && ($_POST['action'] === 'addClientImg')) {
-  addClient();
-}
-
+//удаление картинки портфолио
 if (isset($_POST['action']) && ($_POST['action'] === 'dellPortImg')) {
-  dellPortfolio();
+  dellImgs();
 }
 
+//удаление картинки клиента
 if (isset($_POST['action']) && ($_POST['action'] === 'dellClientImg')) {
-  dellClient();
+  dellImgs();
+}
+
+//добавление картинки
+if (isset($_GET['add']) && ($_FILES['userfile']['tmp_name'] != '')) {
+  addImgs();
 }
 ?>

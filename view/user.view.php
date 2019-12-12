@@ -64,7 +64,7 @@
 
           <?php foreach($portfolioImages as $kay => $value) {?>
           <div     class = "portfolio_image">
-            <img     src   = "../public/<?php echo $portfolioImages[$kay]['img'];?>" alt = "">
+            <img     src   = "../public/images/my<?php echo $portfolioImages[$kay]['name'];?>" alt = "">
           </div>
           <?php }; ?>
 
@@ -80,7 +80,7 @@
 
           <?php foreach($clientsImages as $key => $value) {?>
             <div     class = "client_image">
-              <img     src   = "../public/<?php echo $clientsImages[$key]['img'];?>" alt = "">
+              <img     src   = "../public/images/my<?php echo $clientsImages[$key]['name'];?>" alt = "">
             </div>
           <?php } ?>
 

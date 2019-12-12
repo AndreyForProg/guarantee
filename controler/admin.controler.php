@@ -8,22 +8,17 @@
     include $_SERVER['DOCUMENT_ROOT'] . '/view/admin.view.php';
   }
 
+  //изменить контактные данные
   function update() {
     updateData();
   }
 
-  function addPortfolio() {
-    addPortfolioImg();
+  //добавить картинку
+  function addImgs() {
+    addimg();
   }
 
-  function addClient() {
-    addClientImg();
-  }
-
-  function dellPortfolio() {
-    dellPortImg();
-  }
-
-  function dellClient() {
-    dellClientImg();
+  //удалить картинку
+  function dellImgs() {
+    dellImg();
   }
