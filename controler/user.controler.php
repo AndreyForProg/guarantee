@@ -3,7 +3,7 @@
 
   function userIndex() {
     $data = dataGet();
-    $portfolioImages = getPortfolioImgs();
+    $portfolioImages = getPortfolioImgs(3);
     $clientsImages = getClientsImgs();
     include $_SERVER['DOCUMENT_ROOT'] . '/view/user.view.php';
     $_SESSION['error'] = '';

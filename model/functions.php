@@ -94,14 +94,6 @@ function addImg() {
 }
 
 
-//выбрать всех картинки портфолио
-function getPortfolioImgs() {
-  global $bd;
-  $sql = $bd->query("SELECT * FROM images WHERE grup = 'portfolio' ORDER BY id DESC");
-  return mysqli_fetch_all($sql, MYSQLI_ASSOC);
-}
-
-
 //выбрать всех картинки клиентов
 function getClientsImgs() {
   global $bd;
@@ -121,4 +113,16 @@ function dellImg() {
     $delFile = $_POST['data'];
     unlink('public/images/my' . $delFile);
   }
+}
+
+if (isset($_POST['action']) && ($_POST['action'] === 'add6Imgs')) {
+  echo 'gg';
+  $gg = getPortfolioImgs($_POST['data']);
+  var_dump($gg);
+}
+//выбрать всех картинки портфолио
+function getPortfolioImgs($q) {
+  global $bd;
+$sql = $bd->query("SELECT * FROM images WHERE grup = 'portfolio' LIMIT 1, $q");
+  return mysqli_fetch_all($sql, MYSQLI_ASSOC);
 }

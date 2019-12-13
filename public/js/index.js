@@ -132,9 +132,10 @@ for (let i = 0; i < delClientImg.length; i++) {
       },
       success: function(data) {
         if (data === 'данные удалены') {
-          document.getElementById(valueClientImg[i].value).remove();
+          document.getElementById(valueClientImg[i].value).remove()
         }
       }
     })
   })
 }
+

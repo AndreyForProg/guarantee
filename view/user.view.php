@@ -1,5 +1,6 @@
 <?php
-
+echo '<pre>';
+var_dump($portfolioImages);
 ?>
 <!DOCTYPE html>
 <html lang = "en">
@@ -9,6 +10,7 @@
   <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
   <title>Guarantee</title>
   <link rel = "stylesheet" href = "../public/css/index.css">
+  <script src="../public/js/jquery.js"></script>
 </head>
 <body>
 
@@ -109,5 +111,7 @@
       </div>
     </footer>
   </div>
+
+  <script src="../public/js/user.js"></script>
 </body>
 </html>

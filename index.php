@@ -4,10 +4,15 @@ define('CSS_PATH', './public/css/');
 define('JS_PATH', './public/js/');
 include_once 'controler/user.controler.php';
 include_once 'controler/admin.controler.php';
+// print_r($_POST);
 
 if (empty($_GET) && empty($_POST)) {
   userIndex();
 }
+
+// if (isset($_GET['action']) && ($_GET['action'] === 'add6Imgs')) {
+//   userIndex($_GET['data']);
+// }
 
 if (isset($_GET['admin'])) {
   adminIndex();
