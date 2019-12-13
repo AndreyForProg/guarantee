@@ -68,7 +68,6 @@
         <form class="add" action="index.php?add" method="POST" enctype="multipart/form-data">
           <input type="file" name="userfile[]" multiple="">
           <input type="submit" name="portfolio" class="addPortBtn" value="добавить файл">
-          <div class="portStatus"></div>
         </form>
 
         <!-- выборка всех картиок -->
@@ -89,7 +88,6 @@
         <form class="add" action="index.php?add" method="POST" enctype="multipart/form-data">
           <input type="file" name="userfile[]" multiple="">
           <input type="submit" name="clients" class="addClientBtn" value="добавить файл">
-          <div class="portStatus"></div>
         </form>
 
         <!-- выборка всех картиок -->

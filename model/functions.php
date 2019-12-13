@@ -82,8 +82,15 @@ function addImg() {
       $newW = $w * 0.25;
       $newH = $h * 0.25;
       $newName = './public/images/my' . $name; //название новой картинки
-      $truecolor = imagecreatetruecolor('360', '320'); //длина и ширина новой картинки
-      imagecopyresampled($truecolor, $nImg, 0,0,0,0, '360', '320', $w, $h);
+
+      if ($direct = 'clients') {
+        $truecolor = imagecreatetruecolor('280', '150'); //длина и ширина новой картинки
+        imagecopyresampled($truecolor, $nImg, 0,0,0,0, '280', '150', $w, $h);
+      } else {
+        $truecolor = imagecreatetruecolor('360', '320'); //длина и ширина новой картинки
+        imagecopyresampled($truecolor, $nImg, 0,0,0,0, '360', '320', $w, $h);
+      }
+
       imagejpeg($truecolor, $newName, 100);
       unlink($orgfile); //удаление старой картинки с папки
       echo '<img src="' . $newName .'">';
@@ -102,6 +109,14 @@ function getClientsImgs() {
 }
 
 
+//выбрать всех картинки портфолио
+function getPortfolioImg() {
+  global $bd;
+  $sql = $bd->query("SELECT * FROM images WHERE grup = 'portfolio' ORDER BY id DESC");
+  return mysqli_fetch_all($sql, MYSQLI_ASSOC);
+}
+
+
 //удалить картинку
 function dellImg() {
   global $bd;
@@ -113,16 +128,4 @@ function dellImg() {
     $delFile = $_POST['data'];
     unlink('public/images/my' . $delFile);
   }
-}
-
-if (isset($_POST['action']) && ($_POST['action'] === 'add6Imgs')) {
-  echo 'gg';
-  $gg = getPortfolioImgs($_POST['data']);
-  var_dump($gg);
-}
-//выбрать всех картинки портфолио
-function getPortfolioImgs($q) {
-  global $bd;
-$sql = $bd->query("SELECT * FROM images WHERE grup = 'portfolio' LIMIT 1, $q");
-  return mysqli_fetch_all($sql, MYSQLI_ASSOC);
 }

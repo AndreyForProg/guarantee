@@ -1,6 +1,5 @@
 <?php
-echo '<pre>';
-var_dump($portfolioImages);
+
 ?>
 <!DOCTYPE html>
 <html lang = "en">

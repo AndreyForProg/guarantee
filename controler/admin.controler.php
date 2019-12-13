@@ -3,7 +3,7 @@
 
   function adminIndex() {
     $data = dataGet();
-    $getPortfolioImgs = getPortfolioImgs();
+    $getPortfolioImgs = getPortfolioImg();
     $getClientsImgs = getClientsImgs();
     include $_SERVER['DOCUMENT_ROOT'] . '/view/admin.view.php';
   }
