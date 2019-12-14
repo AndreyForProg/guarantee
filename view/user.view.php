@@ -92,15 +92,15 @@
 
         <div class = "footer_item">
           <img src   = "../public/images/vk.png" alt = "">
-          <div class = "footer_item__text"><a href="#"><? echo $data[0]['vk'] ?></a></div>
+          <div class = "footer_item__text"><a href="<? echo $data[0]['vk'] ?>"><? echo $data[0]['vk'] ?></a></div>
         </div>
         <div class = "footer_item">
           <img src   = "../public/images/inst.png" alt = "">
-          <div class = "footer_item__text"><a href="#"><? echo $data[0]['inst'] ?></a></div>
+          <div class = "footer_item__text"><a href="<? echo $data[0]['inst'] ?>"><? echo $data[0]['inst'] ?></a></div>
         </div>
         <div class = "footer_item">
           <img src   = "../public/images/phone_footer.png" alt = "">
-          <div class = "footer_item__text"><? echo $data[0]['phone'] ?></div>
+          <div class = "footer_item__text">8(918)<? echo $data[0]['phone'] ?></div>
         </div>
         <div class = "footer_item">
           <img src   = "../public/images/mail.png" alt = "">

@@ -7,9 +7,10 @@
   <meta name       = "viewport" content        = "width=device-width, initial-scale=1.0">
   <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
   <title>Admin</title>
-  <link rel = "stylesheet" href = "../public/css/admin.css">
+  <link rel = "stylesheet" href = "http://guarantee.loc/public/css/admin.css">
   <script src="../public/js/jquery.js"></script>
 </head>
+<body>
 
 <div class="wrapper">
 
@@ -18,7 +19,7 @@
     <label for="password">пароль</label>
     <input type="password" id="password">
     <button id='btnEnter'>Войти</button>
-    <div class="errorMessage"></div>
+    <div class="errorMessage">не правильный пароль</div>
 
   </div>
 
@@ -57,9 +58,9 @@
           <input type="text" class="dataItem" value="<?php echo $data[0]['mail']?>">
           <input type="button" value="опубликовать" class="updateBtn mail">
         </div>
+        <div class="status">Данные опубликованы</div>
       </div>
 
-    <div class="status"></div>
 
       <div class="portfolio">
         <h3 class="title">Портофолио</h3>
@@ -105,3 +106,4 @@
   </div>
 </div>
 <script src="../public/js/index.js"></script>
+</body>

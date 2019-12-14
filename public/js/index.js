@@ -24,9 +24,14 @@ btnEnter.addEventListener('click', () => {
     content_Admin.style.display = 'flex'
     adminPas.value = ''
   } else {
-    errorMessage.textContent = 'не правильный пароль'
+    errorMessage.style.opacity = 1
+    function delOp() {
+      errorMessage.style.opacity = 0
+    }
+    setTimeout(delOp, 2000)
   }
 })
+
 
 //выйти из админки
 exit.addEventListener('click', () => {
@@ -82,11 +87,15 @@ for (let i = 0; i < updateBtn.length; i++) {
           type: type,
           data: dataValue,
         },
-        success: function(data) {
-            console.log(data)
-          }
-        })
-    status.textContent = 'данные опубликованы'
+      success: function(data) {
+          console.log(data)
+        }
+      })
+    status.style.opacity = 1
+    function statusContacts() {
+      status.style.opacity = 0
+    }
+    setTimeout(statusContacts, 2000)
   })
 }
 

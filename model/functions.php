@@ -83,7 +83,7 @@ function addImg() {
       $newH = $h * 0.25;
       $newName = './public/images/my' . $name; //название новой картинки
 
-      if ($direct = 'clients') {
+      if ($direct === 'clients') {
         $truecolor = imagecreatetruecolor('280', '150'); //длина и ширина новой картинки
         imagecopyresampled($truecolor, $nImg, 0,0,0,0, '280', '150', $w, $h);
       } else {
